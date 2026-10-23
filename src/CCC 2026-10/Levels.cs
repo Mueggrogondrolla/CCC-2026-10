@@ -12,7 +12,7 @@ internal class Levels
 
         string totalOutput = "";
 
-        for (int i = 0; i < lines.Length; i++)
+        for (int i = 1; i < lines.Length; i++)
         {
             var board = BoardBuilder.BuildBoardWithRadius(int.Parse(lines[i]));
             totalOutput += board.Render();

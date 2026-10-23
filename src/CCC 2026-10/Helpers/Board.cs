@@ -28,6 +28,19 @@ public class Board
             }
             stringBuilder.AppendLine(lineContent);
         }
-        return stringBuilder.ToString();
+
+        string output = stringBuilder.ToString().TrimEnd();
+        output = output.Replace("\r", "");
+
+        if (Tiles.GetLength(0) % 2 == 0)
+        {
+            var lines = output.Split('\n');
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = lines[i].Substring(1, lines[i].Length - 2);
+            }
+            output = string.Join('\n', lines);
+        }
+        return output + "\n";
     }
 }

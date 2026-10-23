@@ -3,6 +3,11 @@ public static class BoardBuilder
     public static Board BuildBoardWithRadius(int radius)
     {
         int width = radius * 2 + 1;
+        if (radius % 2 == 0)
+        {
+            width += 1; // Ensure width is odd
+        }
+
         int height = radius * 2 + 1;
         var board = new Board(width, height);
 
