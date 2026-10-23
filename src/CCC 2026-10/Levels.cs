@@ -8,9 +8,18 @@ internal class Levels
 
     public string SolveLevel1(string input)
     {
-        var fileLines = lineLexer.GetTokens(input);
-        var radiiCount = int.Parse(fileLines.Take(1).Single());
-        var listOfRadii = InputUtils.ReadRadiiList(fileLines.Skip(1));
+        var lines = input.Replace("\r", "").Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+        string totalOutput = "";
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            var board = BoardBuilder.BuildBoardWithRadius(int.Parse(lines[i]));
+            totalOutput += board.Render();
+            totalOutput += "\n";
+        }
+
+        return totalOutput;
     }
 
     public string SolveLevel2(string input)

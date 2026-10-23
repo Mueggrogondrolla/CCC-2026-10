@@ -5,7 +5,7 @@ namespace CCCLibraryTests;
 
 internal class TestUtilities
 {
-    internal static void ParseInputFiles(string workingDirectory, Type[] inputClasses, string inputFilePattern = "level*.in")
+    internal static void ParseInputFiles(string workingDirectory, Type[] inputClasses, string inputFilePattern = "in_level-*.txt")
     {
         var inputFiles = new DirectoryInfo(workingDirectory)
             .EnumerateFiles(inputFilePattern, SearchOption.AllDirectories)
