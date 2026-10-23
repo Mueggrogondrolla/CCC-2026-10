@@ -8,22 +8,27 @@ public static class BoardBuilder
 
         TileType[,] tiles = new TileType[width, height];
 
-        int edgeLength = radius - 1;
+        int edgeLength = radius + 1;
 
         for (int i = 0; i < edgeLength; i++)
         {
             tiles[i + ((width - edgeLength) / 2), 0] = TileType.Edge;
         }
         
-        for (int y = 1; y < (height /2); y++)
+        for (int y = 1; y < (height / 2) + 1; y++)
         {
-            int offset = ((width - edgeLength - y) / 2);
+            int currentWidth = width;
+            if (y % 2 == 0)
+            {
+                currentWidth -= 1; // Reduce width for odd rows
+            }
+            int offset = ((currentWidth - edgeLength - y) / 2);
 
             // set edge tiles
             tiles[offset, y] = TileType.Edge;
-            tiles[width - offset - 1, y] = TileType.Edge;
+            tiles[currentWidth - offset - 1, y] = TileType.Edge;
 
-            for (int x = offset + 1; x < width - offset - 2; x++)
+            for (int x = offset + 1; x < currentWidth - offset - 1; x++)
             {
                 tiles[x, y] = TileType.Board;
             }

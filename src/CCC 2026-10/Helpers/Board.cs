@@ -15,15 +15,18 @@ public class Board
         var stringBuilder = new StringBuilder();
         for (int y = 0; y < Tiles.GetLength(1); y++)
         {
+            var lineBuilder = new StringBuilder();
             for (int x = 0; x < Tiles.GetLength(0); x++)
             {
-                if (x % 2 == 0)
-                {
-                    stringBuilder.Append('-');
-                }
-                stringBuilder.Append(string.Join('-', Tiles[x, y].AsCharacter()));
+                lineBuilder.Append(Tiles[x, y].AsCharacter());
             }
-            stringBuilder.AppendLine();
+
+            string lineContent = string.Join('-', lineBuilder.ToString().ToCharArray());
+            if (y % 2 == 0)
+            {
+                lineContent = "-" + lineContent.Substring(0, lineContent.Length - 1);
+            }
+            stringBuilder.AppendLine(lineContent);
         }
         return stringBuilder.ToString();
     }

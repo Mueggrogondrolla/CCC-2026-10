@@ -13,7 +13,7 @@ public static class TileTypeExtensions
     {
         return tileType switch
         {
-            TileType.Empty => ' ',
+            TileType.Empty => '-',
             TileType.Edge => '*',
             TileType.Board => 'O',
             _ => throw new ArgumentOutOfRangeException(nameof(tileType), tileType, null)
