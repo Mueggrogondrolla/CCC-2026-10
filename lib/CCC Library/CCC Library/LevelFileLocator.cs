@@ -30,7 +30,7 @@ public sealed class LevelFileLocator
     /// </summary>
     public FileInfo GetInfoFile()
     {
-        return _workingDirectory.EnumerateFiles($"Level{_levelId}*.pdf", SearchOption.AllDirectories).Single();
+        return _workingDirectory.EnumerateFiles($"level-{_levelId}*.pdf", SearchOption.AllDirectories).Single();
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ public sealed class LevelFileLocator
     /// </summary>
     public FileInfo GetExampleInputFile()
     {
-        return _workingDirectory.EnumerateFiles($"level{_levelId}*example.in", SearchOption.AllDirectories).Single();
+        return _workingDirectory.EnumerateFiles($"in_level-{_levelId}*example.txt", SearchOption.AllDirectories).Single();
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public sealed class LevelFileLocator
     /// </summary>
     public FileInfo GetExampleOutputFile()
     {
-        return _workingDirectory.EnumerateFiles($"level{_levelId}*example.out", SearchOption.AllDirectories).Single();
+        return _workingDirectory.EnumerateFiles($"out_level-{_levelId}*example.txt", SearchOption.AllDirectories).Single();
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public sealed class LevelFileLocator
     /// </summary>
     public FileInfo GetOwnExampleOutputFile()
     {
-        return _workingDirectory.EnumerateFiles($"level{_levelId}*example_generated.out", SearchOption.AllDirectories).Single();
+        return _workingDirectory.EnumerateFiles($"out_level-{_levelId}*example_generated.txt", SearchOption.AllDirectories).Single();
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ public sealed class LevelFileLocator
     /// </summary>
     public IEnumerable<FileInfo> GetInputFiles()
     {
-        return _workingDirectory.EnumerateFiles($"level{_levelId}*.in", SearchOption.AllDirectories);
+        return _workingDirectory.EnumerateFiles($"in_level-{_levelId}*.txt", SearchOption.AllDirectories);
     }
 
     /// <summary>
@@ -70,6 +70,6 @@ public sealed class LevelFileLocator
     /// </summary>
     public IEnumerable<FileInfo> GetOutputFiles()
     {
-        return _workingDirectory.EnumerateFiles($"level{_levelId}*.out", SearchOption.AllDirectories);
+        return _workingDirectory.EnumerateFiles($"out_level-{_levelId}*.txt", SearchOption.AllDirectories);
     }
 }

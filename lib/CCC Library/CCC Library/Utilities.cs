@@ -16,11 +16,11 @@ internal static class Utilities
         {
             if (inputFile.Name.Contains("example"))
             {
-                return new FileInfo(inputFile.FullName.Replace(".in", "_generated.out"));
+                return new FileInfo(inputFile.FullName.Replace("in_", "out_").Replace("example", "example_generated"));
             }
             else
             {
-                return new FileInfo(inputFile.FullName.Replace(".in", ".out"));
+                return new FileInfo(inputFile.FullName.Replace("in_", "out_"));
             }
         }
     }
