@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCC Library", "CCC Library\CCC Library.csproj", "{967D1AAA-E982-4BEB-9459-35C20FF73165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCC Library Tests", "CCC Library Tests\CCC Library Tests.csproj", "{EF586742-E1FF-4C50-885A-198FF511EE59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{967D1AAA-E982-4BEB-9459-35C20FF73165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967D1AAA-E982-4BEB-9459-35C20FF73165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967D1AAA-E982-4BEB-9459-35C20FF73165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967D1AAA-E982-4BEB-9459-35C20FF73165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF586742-E1FF-4C50-885A-198FF511EE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF586742-E1FF-4C50-885A-198FF511EE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF586742-E1FF-4C50-885A-198FF511EE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF586742-E1FF-4C50-885A-198FF511EE59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
